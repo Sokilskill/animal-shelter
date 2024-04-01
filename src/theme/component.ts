@@ -6,24 +6,15 @@ export const Container = {
       paddingX: "40px",
       outline: "1px solid yellow",
     },
-    "@media screen and (max-width: 1439px)": {
+    "@media screen and (min-width: 768px)": {
       maxWidth: "1024px",
       paddingX: "32px",
       outline: "1px solid green",
     },
     "@media screen and (max-width: 767px)": {
       maxWidth: "375px",
+      minWidth: "320px",
       paddingX: "24px",
-      outline: "1px solid blue",
-    },
-    variants: {
-      small: {
-        "@media screen and (max-width: 767px)": {
-          maxWidth: "375px",
-          paddingX: "20px",
-          outline: "1px solid blue",
-        },
-      },
     },
   },
 };
@@ -35,5 +26,28 @@ export const Link = {
     _hover: {
       textDecoration: "none",
     },
+  },
+};
+
+export const Heading = {
+  baseStyle: {
+    lineHeight: 1.2,
+    fontWeight: "semibold",
+    fontSize: "32px",
+  },
+  sizes: {},
+  variants: {
+    sectionHeading: {
+      "@media screen and (max-width: 767px)": {
+        textAlign: "center",
+      },
+      "@media screen and (min-width: 768px)": {
+        color: " red",
+      },
+    },
+  },
+  defaultProps: {
+    baseStyle: "",
+    size: "",
   },
 };
