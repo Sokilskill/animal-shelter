@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { SuspenseLoader } from "./components/SuspenseLoader";
+import { SuspenseLoader } from "./components/Loader/SuspenseLoader";
 
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 
