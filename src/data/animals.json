@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "name": "Дружок",
+    "age": {
+      "year": "1",
+      "month": "3"
+    },
+    "img": "./animals/drywok.jpg",
+    "imgMob": "./animals/mob/drywok.jpg",
+    "description": "Собака породи лабрадор"
+  },
+  {
+    "id": "2",
+    "name": "Бім",
+    "age": {
+      "year": "",
+      "month": "8"
+    },
+    "img": "./animals/bim.jpg",
+    "imgMob": "./animals/mob/bim.jpg",
+    "description": "Собака"
+  },
+  {
+    "id": "3",
+    "name": "Сільвер",
+    "age": {
+      "year": "1",
+      "month": "9"
+    },
+    "img": "./animals/silver.jpg",
+    "imgMob": "./animals/mob/silver.jpg",
+    "description": "Кіт"
+  },
+  {
+    "id": "4",
+    "name": "Білка",
+    "age": {
+      "year": "2",
+      "month": ""
+    },
+    "img": "./animals/bilka.jpg",
+    "imgMob": "./animals/mob/bilka.jpg",
+    "description": "Руда кішка"
+  },
+  {
+    "id": "5",
+    "name": "Лаккі",
+    "age": {
+      "year": "2",
+      "month": "1"
+    },
+    "img": "animals/lucky.jpg",
+    "imgMob": "animals/mob/lucky.jpg",
+    "description": "Пес"
+  },
+  {
+    "id": "6",
+    "name": "Джек",
+    "age": {
+      "year": "2",
+      "month": "1"
+    },
+    "img": "",
+    "imgMob": "animals/mob/jack.jpg",
+    "description": "Пес"
+  },
+  {
+    "id": "7",
+    "name": "Буся",
+    "age": {
+      "year": "2",
+      "month": "1"
+    },
+    "img": "",
+    "imgMob": "animals/mob/bysya.jpg",
+    "description": "Пес"
+  },
+  {
+    "id": "8",
+    "name": "Журик",
+    "age": {
+      "year": "1",
+      "month": ""
+    },
+    "img": "animals/wyruk.jpg",
+    "imgMob": "animals/wyruk.jpg",
+    "description": "Пес"
+  }
+]
