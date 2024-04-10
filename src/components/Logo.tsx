@@ -2,9 +2,9 @@ import { Image, Link } from "@chakra-ui/react";
 import logoTabletDesk from "../assets/logo/logo-desk-tablet.svg";
 import logoMob from "../assets/logo/logo-mobile.svg";
 
-export const LogoTabletDesk: React.FC = () => {
+export const LogoTabletDesk: React.FC<{ style?: object }> = ({ style }) => {
   return (
-    <Link href="/">
+    <Link href="/" mr="auto" {...style}>
       <Image
         src={logoTabletDesk}
         alt="Зоюраження логотипу"
@@ -17,7 +17,7 @@ export const LogoTabletDesk: React.FC = () => {
 
 export const LogoMob: React.FC<{ style?: object }> = ({ style }) => {
   return (
-    <Link href="/" {...style}>
+    <Link href="/" mr="auto" {...style}>
       <Image
         src={logoMob}
         alt="Зоюраження логотипу"
