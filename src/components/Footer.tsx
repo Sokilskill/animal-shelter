@@ -1,31 +1,9 @@
-import { Box, Flex, HStack, List, ListItem, Text } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 
 import { LogoTabletDesk } from "./Logo";
 import { ListSocialIcons } from "./SocialIcons";
-
-interface ListNav {
-  name: string;
-  to: string;
-}
-const listGoodness: ListNav[] = [
-  { name: "Вірні друзі", to: "#catalog" },
-  { name: "Обрати друга", to: "#reviews" },
-  { name: "Щасливчики", to: "#how-to-order" },
-  { name: "Стати волонтером", to: "#contact" },
-];
-
-const listAbout: ListNav[] = [
-  { name: "Про нас", to: "#contact" },
-  { name: "Наші умови", to: "#contact" },
-  { name: "Наша команда", to: "#contact" },
-  { name: "Історія створення", to: "#contact" },
-];
-const listContactDetails: ListNav[] = [
-  { name: "Локаця", to: "#contact" },
-  { name: "Контакти", to: "#contact" },
-  { name: "Інормація", to: "#contact" },
-];
+import { NavList } from "./NavList/NavList";
+import { listGoodness, listAbout, listContactDetails } from "../data/navList";
 
 export const Footer: React.FC = () => {
   return (
@@ -60,33 +38,11 @@ export const Footer: React.FC = () => {
           </Flex>
         </HStack>
       </Flex>
+
       <Text textAlign="center" mt={20}>
         © 2024. Всі права захищено <b>reserved@hatyna.ua</b>
       </Text>
     </Box>
-  );
-};
-
-//
-// навігації футера
-const NavList: React.FC<{ listItem: ListNav[]; "aria-label": string }> = ({
-  listItem,
-  "aria-label": ariaLabel,
-}) => {
-  return (
-    <List
-      display={"flex"}
-      flexDirection="column"
-      rowGap={2}
-      w={{ base: "164px" }}
-      aria-label={ariaLabel}
-    >
-      {listItem.map((item, index) => (
-        <ListItem key={index} fontSize={{ base: "16px" }}>
-          <RouterLink to={`/${item.to}`}>{item.name}</RouterLink>
-        </ListItem>
-      ))}
-    </List>
   );
 };
 
