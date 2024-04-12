@@ -1,43 +1,54 @@
-import { Box, Container, Icon, Link } from "@chakra-ui/react";
-import { LogoMob } from "./Logo";
+import {
+  Box,
+  Button,
+  Container,
+  useDisclosure,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import { useRef } from "react";
 
-export const Header = () => {
+import { LogoMob, LogoTabletDesk } from "./Logo";
+import { MobMenu } from "./MobMenu/MobMenu";
+import { BurgerBtnIcon } from "../assets/icons/burgerBtn";
+import { SelectLanguage } from "./SelectLanguage/SelectLanguage";
+
+export const Header: React.FC = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef<HTMLButtonElement>(null);
+
   return (
     <Box as="header">
-      <Container display="flex" alignItems={"center"} h="100px ">
-        <LogoMob />
-
-        <Link
-          fontSize={{ base: "15px", sm: "20px" }}
+      <Container
+        display="flex"
+        alignItems={"center"}
+        gap={[2, 2, 6]}
+        h={["100px ", "124px"]}
+      >
+        {isMobile ? <LogoMob /> : <LogoTabletDesk />}
+        <Box display={{ base: "none", md: "block" }}>
+          <SelectLanguage />
+        </Box>
+        <Button
+          as="a"
+          href="#help"
+          fontSize={{ base: "15px", sm: "20px", md: "24px" }}
+          fontWeight={[400, 400, 600]}
+          maxW={[40, 40, "unset"]}
           px={"25px"}
           py={"15px"}
-          ml="auto"
-          mr={{ base: "8px" }}
-          color="white"
-          bgColor="custom.red"
+          borderWidth={["2px", "2px", "4px", "4px"]}
           borderRadius="15px"
+          variant="primary"
         >
           Допомогти
-        </Link>
+        </Button>
 
-        <Icon viewBox="0 0 56 66" w="56px" h="66px">
-          <g clipPath="url(#clip0_33221_2230)">
-            <path
-              d="M41.3333 43C41.7581 43.0005 42.1667 43.1632 42.4756 43.4548C42.7845 43.7464 42.9704 44.1449 42.9953 44.569C43.0202 44.9931 42.8822 45.4107 42.6096 45.7364C42.3369 46.0622 41.9502 46.2715 41.5283 46.3217L41.3333 46.3334H14.6667C14.2419 46.3329 13.8333 46.1702 13.5244 45.8786C13.2155 45.587 13.0296 45.1884 13.0047 44.7644C12.9798 44.3403 13.1178 43.9227 13.3904 43.597C13.6631 43.2712 14.0498 43.0619 14.4717 43.0117L14.6667 43H41.3333ZM41.3333 31.3334C41.7754 31.3334 42.1993 31.5089 42.5118 31.8215C42.8244 32.1341 43 32.558 43 33C43 33.442 42.8244 33.866 42.5118 34.1785C42.1993 34.4911 41.7754 34.6667 41.3333 34.6667H14.6667C14.2246 34.6667 13.8007 34.4911 13.4882 34.1785C13.1756 33.866 13 33.442 13 33C13 32.558 13.1756 32.1341 13.4882 31.8215C13.8007 31.5089 14.2246 31.3334 14.6667 31.3334H41.3333ZM41.3333 19.6667C41.7754 19.6667 42.1993 19.8423 42.5118 20.1548C42.8244 20.4674 43 20.8913 43 21.3334C43 21.7754 42.8244 22.1993 42.5118 22.5119C42.1993 22.8244 41.7754 23 41.3333 23H14.6667C14.2246 23 13.8007 22.8244 13.4882 22.5119C13.1756 22.1993 13 21.7754 13 21.3334C13 20.8913 13.1756 20.4674 13.4882 20.1548C13.8007 19.8423 14.2246 19.6667 14.6667 19.6667H41.3333Z"
-              fill="#EF3959"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_33221_2230">
-              <rect
-                width="40"
-                height="40"
-                fill="white"
-                transform="translate(8 13)"
-              />
-            </clipPath>
-          </defs>
-        </Icon>
+        <Button onClick={onOpen} bgColor="transparent">
+          <BurgerBtnIcon />
+        </Button>
+
+        <MobMenu isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
       </Container>
     </Box>
   );
