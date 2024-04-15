@@ -11,6 +11,7 @@ const theme = extendTheme({
     base: "0em",
     sm: "23.4em",
     md: "64em",
+    xl: "90em",
     lg: "90em",
   },
   styles: {
