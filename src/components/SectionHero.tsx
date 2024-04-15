@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import heroImgMob from "../assets/hero/hero-image1-mob.png";
 import heroImgLaptop from "../assets/hero/hero-image1-laptop.png";
+import heroImgDesktop from "../assets/hero/hero-image1-desktop.png";
 import decor from "../assets/hero/decor-mob.png";
 
 export const SectionHero: React.FC = () => {
@@ -24,7 +25,7 @@ export const SectionHero: React.FC = () => {
   if (breakpoint === "laptop") {
     heroImg = heroImgLaptop;
   } else if (breakpoint === "desktop") {
-    heroImg = heroImgLaptop;
+    heroImg = heroImgDesktop;
   } else {
     heroImg = heroImgMob;
   }
@@ -85,17 +86,22 @@ export const SectionHero: React.FC = () => {
         <Flex
           alignItems="center"
           justify="center"
-          w={{ base: "100%", sm: "375px", md: "480px" }}
+          w={{ base: "100%", sm: "375px", md: "480px", lg: "615px" }}
           my={6}
           bgImage={`url(${decor})`}
           bgRepeat="no-repeat"
           bgPosition="center"
-          bgSize={{ base: "100% auto", sm: "346px 348px", md: "100% 515px" }}
+          bgSize={{
+            base: "100% auto",
+            sm: "346px 348px",
+            md: "100% 515px",
+            lg: "100% 680px",
+          }}
         >
           <Image
             src={heroImg}
-            w={["100%", "286px", "438px"]}
-            h={["auto", "370px", "553px"]}
+            w={["100%", "286px", "438px", "538px"]}
+            h={["auto", "370px", "553px", "680px"]}
           />
         </Flex>
 
