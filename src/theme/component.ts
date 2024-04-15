@@ -3,19 +3,19 @@
 export const Container = {
   baseStyle: {
     margin: "0 auto",
-    "@media screen and (min-width: 1440px)": {
-      maxWidth: "1440px",
-      paddingX: "40px",
-      outline: "1px solid yellow",
+    "@media screen and (max-width: 1023px)": {
+      maxWidth: "375px",
+      minWidth: "300px",
+      paddingX: "14px",
     },
     "@media screen and (min-width: 1024px)": {
       maxWidth: "1024px",
       paddingX: "32px",
     },
-    "@media screen and (max-width: 1023px)": {
-      maxWidth: "375px",
-      minWidth: "300px",
-      paddingX: "14px",
+    "@media screen and (min-width: 1440px)": {
+      maxWidth: "1440px",
+      paddingX: "40px",
+      outline: "1px solid yellow",
     },
   },
 };
@@ -104,7 +104,7 @@ export const Heading = {
         textAlign: "center",
       },
       "@media screen and (min-width: 768px)": {
-        color: " red",
+        // color: " red",
       },
     },
   },
