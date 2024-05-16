@@ -8,18 +8,19 @@ import { listGoodness, listAbout, listContactDetails } from "../data/navList";
 export const Footer: React.FC = () => {
   return (
     <Box as="footer" pt="40px" pb="25px">
-      <Flex direction="column" gap="36px" px={{ base: "16px" }}>
-        <Box w={{ base: "212px" }} mx="auto">
+      <Flex direction={{base:"column", lg:"row"}} gap="36px" px={{ base: 4, lg: 10}}>
+        <Box w={{ base: "212px" }} mx="auto" mr={{lg:"132px"}}>
           <LogoTabletDesk />
 
-          <Text my={4}>Приєднутесь до нас в соціальних мережах</Text>
+          <Text my={{base: 4, md: 8, lg:8}}>Приєднутесь до нас в соціальних мережах</Text>
           <ListSocialIcons />
         </Box>
 
         <HStack
+        fontSize={["16px",'16px','20px']}
           width="100%"
           columnGap="2px"
-          rowGap={{ base: "36px" }}
+          rowGap={{ base: "36px", lg: 4 }}
           flexWrap="wrap"
           justifyContent="space-between"
           alignItems="flex-start"
@@ -31,8 +32,10 @@ export const Footer: React.FC = () => {
           <Flex
             direction="column"
             alignItems="flex-start"
-            width="164px"
+            width={{base:"164px", lg:"325px"}}
             aria-label="Help us"
+            fontSize={["16px","16px", "20px"]}
+            gap={2}
           >
             <DonationIfo />
           </Flex>
@@ -49,7 +52,7 @@ export const Footer: React.FC = () => {
 // інформація про Donate
 const DonationIfo: React.FC = () => {
   return (
-    <>
+    < >
       <Text>Допомогти матеріально:</Text>
       <Text>ГО “ХАТИНА”</Text>
       <Text text-wrap="nowrap">
