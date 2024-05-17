@@ -5,7 +5,7 @@ export interface Animal {
     year: string;
     month: string;
   };
-  img: string;
+  imgLg: string;
   imgMob: string;
   description: string;
 }

@@ -6,7 +6,7 @@
       "year": "1",
       "month": "3"
     },
-    "img": "./animals/drywok.jpg",
+    "imgLg": "./animals/drywok.jpg",
     "imgMob": "./animals/mob/drywok.jpg",
     "description": "Собака породи лабрадор"
   },
@@ -17,7 +17,7 @@
       "year": "",
       "month": "8"
     },
-    "img": "./animals/bim.jpg",
+    "imgLg": "./animals/bim.jpg",
     "imgMob": "./animals/mob/bim.jpg",
     "description": "Собака"
   },
@@ -28,7 +28,7 @@
       "year": "1",
       "month": "9"
     },
-    "img": "./animals/silver.jpg",
+    "imgLg": "./animals/silver.jpg",
     "imgMob": "./animals/mob/silver.jpg",
     "description": "Кіт"
   },
@@ -39,7 +39,7 @@
       "year": "2",
       "month": ""
     },
-    "img": "./animals/bilka.jpg",
+    "imgLg": "./animals/bilka.jpg",
     "imgMob": "./animals/mob/bilka.jpg",
     "description": "Руда кішка"
   },
@@ -50,7 +50,7 @@
       "year": "2",
       "month": "1"
     },
-    "img": "animals/lucky.jpg",
+    "imgLg": "animals/lucky.jpg",
     "imgMob": "animals/mob/lucky.jpg",
     "description": "Пес"
   },
@@ -61,7 +61,7 @@
       "year": "2",
       "month": "1"
     },
-    "img": "",
+    "imgLg": "animals/mob/jack.jpg",
     "imgMob": "animals/mob/jack.jpg",
     "description": "Пес"
   },
@@ -72,7 +72,7 @@
       "year": "2",
       "month": "1"
     },
-    "img": "",
+    "imgLg": "animals/mob/bysya.jpg",
     "imgMob": "animals/mob/bysya.jpg",
     "description": "Пес"
   },
@@ -83,7 +83,7 @@
       "year": "1",
       "month": ""
     },
-    "img": "animals/wyruk.jpg",
+    "imgLg": "animals/wyruk.jpg",
     "imgMob": "animals/wyruk.jpg",
     "description": "Пес"
   }

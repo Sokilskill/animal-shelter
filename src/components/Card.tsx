@@ -3,7 +3,6 @@ import {
   Heading,
   useMediaQuery,
   Image,
-  Show,
   Text,
   Flex,
 } from "@chakra-ui/react";
@@ -15,18 +14,15 @@ interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({ item }) => {
-  const { img, imgMob, name, age, description } = item;
+  const { imgLg, imgMob, name, age, description } = item;
 
   // Визначення ширини екрану
-  const [isLargerThanLg] = useMediaQuery("(min-width: 1440px)"); // 1440px
-  const [isSmallerThanLg] = useMediaQuery("(max-width: 89,9em)"); // 1339px
+  const [isLargerThanLg] = useMediaQuery("(min-width: 1024px)");
 
   // визначення, відображення зображення мобільного чи десктопного
   const getImageSrc = () => {
     if (isLargerThanLg) {
-      return img;
-    } else if (isSmallerThanLg) {
-      return imgMob;
+      return imgLg;
     } else {
       return imgMob; // за замовчуванням використовуємо мобільну версію
     }
@@ -48,31 +44,31 @@ export const Card: React.FC<CardProps> = ({ item }) => {
   //
   //
   return (
-    <Box w="223px">
-      <Show below="lg">
-        <Image
-          src={getImageSrc()}
-          alt={`Зображення ${description}`}
-          h={isLargerThanLg ? "350px" : "260px"}
-        />
-      </Show>
+    <>
+      <Image
+        src={getImageSrc()}
+        alt={`Зображення ${description}`}
+        h={{ base: "260px", lg: "350px" }}
+      />
 
       <Flex py="14px" justifyContent="space-between" alignItems="center">
         <Box>
           <Heading
-            color="custom.darkBlue"
             as="h4"
-            fontWeight="400"
-            fontSize="32px"
+            fontWeight={{ base: 400, lg: 700 }}
+            fontSize={{ base: "32px", lg: "40px" }}
             lineHeight="1.6"
             mb="8px"
           >
             {name}
           </Heading>
-          <Text>Вік {formatAge()}</Text>
+
+          <Text fontSize={{ lg: "24px" }} fontWeight={{ lg: 700 }}>
+            Вік {formatAge()}
+          </Text>
         </Box>
-        <ArrowIcon boxSize="44px" />
+        <ArrowIcon boxSize={{ base: "44px", lg: "66px" }} />
       </Flex>
-    </Box>
+    </>
   );
 };
