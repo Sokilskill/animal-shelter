@@ -1,45 +1,48 @@
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
-// import { ListOgAnimals } from "./ListOfAnimals/ListOgAnimals";
+import { Box, Button, Heading, List, ListItem, Text } from "@chakra-ui/react";
+import { useBreakpointValue } from '@chakra-ui/react'
 
 import listOfAnimals from "../data/animals.json";
 import { Slider } from "./Slider/SliderAnimal";
+import { Card } from "./Card";
+
 
 export const SectionChoose = () => {
+const isMobile = useBreakpointValue({base:true, md:false})
+
   return (
-    <Box as="section" width="100%" pb="60px" mx="auto">
-      <Container>
-        <Heading variant="sectionHeading" mb={6}>
+    <Box as="section" width="100%" pb={{base:"60px", lg:"64px"}} mx={{base:"auto", lg:10}} display={'flex'} flexDirection={'column' } justifyContent={'center'}>
+        <Heading  variant="sectionHeading" mb={6} textAlign={"center"}>
           Вибери собі вірного друга
         </Heading>
 
-        <Text>Не купуй – прихисти, адже справжня дружба не продається!</Text>
-      </Container>
+        <Text  fontSize={['16px', "16px", "24px"]} textAlign={"center"}>Не купуй – прихисти, адже справжня дружба не продається!</Text>
 
-      <Box w={{ base: "375px" }} pl="32px" mx="auto" my={6}>
+{isMobile ? 
+      <Box   w={{ base: "375px" }} pl="32px" mx="auto" my={6}>
         <Slider animals={listOfAnimals} />
-        {/* <ListOgAnimals animals={listOfAnimals} /> */}
-      </Box>
+      </Box> :
 
-      <Container>
-        {/* створити кастомні стилі для цієї кнопки */}
+<Box mx={10} my={{lg:"64px"}}>
+<List display='flex' rowGap={20} columnGap="125px" flexWrap='wrap'>
+            {listOfAnimals.map((animal) => (
+              <ListItem key={animal.id}>
+                <Card item={animal} />
+              </ListItem>
+            ))}
+          </List>
+</Box>}
 
-        <Box
-          as="button"
+
+        <Button
+        mx={'auto'}
           type="button"
-          fontSize="32px"
-          color="custom.red"
-          p="15px"
-          w="100%"
-          maxW="327px"
-          textAlign="center"
-          bgColor="white"
-          border="3px groove #007BFF"
-          borderTopRadius="25px"
-          borderBottomEndRadius="25px"
+          fontSize={{base:"32px", lg: '36px'}}
+          w={ "100%"}
+          maxW={{base:"327px", lg:'442px'}}
+          variant="secondary"
         >
           Показати більше
-        </Box>
-      </Container>
+        </Button>
     </Box>
   );
 };
