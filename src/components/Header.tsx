@@ -1,53 +1,64 @@
-import {
-  Box,
-  Button,
-  Container,
-  useDisclosure,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Button, Container, useDisclosure } from "@chakra-ui/react";
 import { useRef } from "react";
 
 import { LogoMob, LogoTabletDesk } from "./Logo";
 import { MobMenu } from "./MobMenu/MobMenu";
 import { BurgerBtnIcon } from "../assets/icons/burgerBtn";
 import { SelectLanguage } from "./SelectLanguage/SelectLanguage";
+import { useBreakpoint } from "../hooks/useBreakpoint";
+import { NavList } from "./NavList/NavList";
+import { navHeaderDesktop } from "../data/navList";
 
 export const Header: React.FC = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const breakpoint = useBreakpoint();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
+
+  const getLogo = () =>
+    breakpoint === "mobile" ? <LogoMob /> : <LogoTabletDesk />;
+
+  const getNavList = () =>
+    breakpoint === "desktop" && (
+      <NavList
+        listItem={navHeaderDesktop}
+        aria-label="navigation"
+        style={{
+          flexDirection: "row",
+          width: { lg: "715px" },
+          justifyContent: "space-between",
+          fontWeight: 400,
+        }}
+      />
+    );
+
+  const getSelectLanguage = () => breakpoint !== "mobile" && <SelectLanguage />;
+
+  const getHelpButton = () => (
+    <Button as="a" href="#help" variant="help">
+      Допомогти
+    </Button>
+  );
+
+  const getBurgerButton = () =>
+    breakpoint !== "desktop" && (
+      <Button onClick={onOpen} bgColor="transparent">
+        <BurgerBtnIcon />
+      </Button>
+    );
 
   return (
     <Box as="header">
       <Container
         display="flex"
-        alignItems={"center"}
+        alignItems="center"
         gap={[2, 2, 6]}
-        h={["100px ", "124px"]}
+        h={["100px", "124px"]}
       >
-        {isMobile ? <LogoMob /> : <LogoTabletDesk />}
-        <Box display={{ base: "none", md: "block" }}>
-          <SelectLanguage />
-        </Box>
-        <Button
-          as="a"
-          href="#help"
-          fontSize={{ base: "15px", sm: "20px", md: "24px" }}
-          fontWeight={[400, 400, 600]}
-          maxW={[40, 40, "unset"]}
-          px={"25px"}
-          py={"15px"}
-          borderWidth={["2px", "2px", "4px", "4px"]}
-          borderRadius="15px"
-          variant="primary"
-        >
-          Допомогти
-        </Button>
-
-        <Button onClick={onOpen} bgColor="transparent">
-          <BurgerBtnIcon />
-        </Button>
-
+        {getLogo()}
+        {getNavList()}
+        {getSelectLanguage()}
+        {getHelpButton()}
+        {getBurgerButton()}
         <MobMenu isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
       </Container>
     </Box>
