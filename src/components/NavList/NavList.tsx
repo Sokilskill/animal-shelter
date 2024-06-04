@@ -20,7 +20,7 @@ export const NavList: React.FC<{
       {listItem.map((item, index) => (
         <ListItem
           key={index}
-          fontSize={{ base: "16px", lg: "20px" }}
+          // fontSize={{ base: "16px", lg: "20px" }}
           onClick={onClick}
         >
           <Link href={item.to}>{item.name}</Link>
