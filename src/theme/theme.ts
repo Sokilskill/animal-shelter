@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
-import { Container, Link, Heading, Button } from "./component";
+import { Container, Link, Heading, Button, Text } from "./component";
 
 const theme = extendTheme({
   fonts: {
@@ -14,10 +14,20 @@ const theme = extendTheme({
     xl: "90em",
     lg: "90em",
   },
+
   styles: {
     global: {
+      "@media (prefers-reduced-motion: no-preference)": {
+        ":root": {
+          scrollBehavior: "smooth",
+        },
+      },
+      a: {
+        textDecoration: "none",
+      },
+
       body: {
-        bg: "custom.blueRedGradient", // Фоновий колір для body
+        bg: "white", // Фоновий колір для body
         color: "custom.darkBlue", // Колір тексту
         fontFamily: "body",
         fontWeight: "medium",
@@ -29,12 +39,13 @@ const theme = extendTheme({
     custom: {
       white: "#F5F5F5",
       blue: "#4A86FF",
-      blueRedGradient: "radial-gradient( 90deg, #4A86FF, #F5F5F5, #EF3959)",
-      redPrimary: "#EF3959",
       red: "#EF3959",
-      redBgGradient: "linear(to-r, #EF3959, #F5F5F5, #4A86FF)",
       darkBlue: "#202053",
       blackTypography: "#404040",
+      borderGradient: `
+      linear-gradient(to right, white, white),
+  linear-gradient(94deg, #4a86ff, #f5f5f5 , #ef3959)
+  `,
     },
   },
 
@@ -43,6 +54,7 @@ const theme = extendTheme({
     Button,
     Link,
     Heading,
+    Text,
     Select: {
       defaultProps: {
         variants: "",
