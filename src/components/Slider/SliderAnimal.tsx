@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import { Animal } from "../../types"; // імпорт через index.ts
-import { Card } from "../Card";
+import { Card } from "../Card/Card";
 
 import "swiper/swiper-bundle.css";
 
@@ -19,7 +19,7 @@ export const Slider: React.FC<SliderProps> = ({ animals }) => {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       modules={[Autoplay]}
     >
-      {animals.map((animal) => (
+      {animals.map(animal => (
         <SwiperSlide key={animal.id} style={{ width: "223px" }}>
           <Card item={animal} />
         </SwiperSlide>
