@@ -13,7 +13,7 @@ const SectionLocation = lazy(
   () => import("../components/Sections/SectionLocation")
 );
 const SectionContacts = lazy(
-  () => import("../components/Sections/SectionContacts")
+  () => import("../components/Sections/SectionContacts/SectionContacts")
 );
 const SectionHelp = lazy(() => import("../components/Sections/SectionHelp"));
 
