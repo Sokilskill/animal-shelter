@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { NavList } from "../NavList/NavList";
-import { navHeader } from "../../data/navList";
+import { mobileNavigationList } from "../../data/navList";
 import { CloseBtnIcon } from "../../assets/icons/burgerBtn";
 import { SelectLanguage } from "../SelectLanguage/SelectLanguage";
 import { LogoMob, LogoTabletDesk } from "../Logo";
@@ -41,25 +41,15 @@ export const MobMenu: React.FC<MobMenuProps> = ({
             <Container
               display="flex"
               alignItems={"center"}
-              gap={[2, 2, 6]}
+              gap={[2, 2, 0]}
               h={["100px ", "124px"]}
             >
               {isMobile ? <LogoMob /> : <LogoTabletDesk />}
               <Box display={{ base: "none", md: "block" }}>
                 <SelectLanguage />
               </Box>
-              <Button
-                as="a"
-                href="#help"
-                fontSize={{ base: "15px", sm: "20px", md: "24px" }}
-                fontWeight={[400, 400, 600]}
-                maxW={[40, 40]}
-                px={"25px"}
-                py={"15px"}
-                borderWidth={["2px", "2px", "4px", "4px"]}
-                borderRadius="15px"
-                variant="primary"
-              >
+
+              <Button as="a" href="#help" variant="help" onClick={onClose}>
                 Допомогти
               </Button>
               <Button onClick={onClose} bgColor="transparent">
@@ -75,7 +65,8 @@ export const MobMenu: React.FC<MobMenuProps> = ({
             alignItems="center"
           >
             <NavList
-              listItem={navHeader}
+              onClick={onClose}
+              listItem={mobileNavigationList}
               aria-label={"navigation"}
               style={{ alignItems: "center", gap: "30px" }}
             />
