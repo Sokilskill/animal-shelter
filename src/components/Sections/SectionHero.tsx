@@ -43,7 +43,7 @@ const SectionHero: React.FC = () => {
     return (
       <Button
         as="a"
-        href="#choose"
+        href="#catalog"
         w={{ base: "327px", md: "328px" }}
         h={{ base: "80px", md: "102px" }}
         px={20}
