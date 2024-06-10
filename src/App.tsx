@@ -1,6 +1,8 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SuspenseLoader } from "./components/Loader/SuspenseLoader";
+import Background from "./components/Background/Background";
+import { Box } from "@chakra-ui/react";
 
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 
@@ -11,7 +13,16 @@ const App: React.FC = () => {
         path="/"
         element={
           <Suspense fallback={<SuspenseLoader />}>
-            <LandingPage />
+            <Box
+              maxW={{ base: "375px", md: "1024px", lg: "1440px" }}
+              position="relative"
+              minHeight="100vh"
+              mx="auto"
+            >
+              <Background />
+
+              <LandingPage />
+            </Box>
           </Suspense>
         }
       />
