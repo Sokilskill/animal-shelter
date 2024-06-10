@@ -1,9 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import Header from "../components/Header/Header";
-import { Footer } from "../components/Footer/Footer";
 import { SuspenseLoader } from "../components/Loader/SuspenseLoader";
+import SectionHero from "../components/Sections/SectionHero";
 
-const SectionHero = lazy(() => import("../components/Sections/SectionHero"));
 const SectionAbout = lazy(() => import("../components/Sections/SectionAbout"));
 const SectionChoose = lazy(
   () => import("../components/Sections/SectionChoose")
@@ -16,14 +15,15 @@ const SectionContacts = lazy(
   () => import("../components/Sections/SectionContacts/SectionContacts")
 );
 const SectionHelp = lazy(() => import("../components/Sections/SectionHelp"));
+const Footer = lazy(() => import("../components/Footer/Footer"));
 
 const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
       <main>
+        <SectionHero />
         <Suspense fallback={<SuspenseLoader />}>
-          <SectionHero />
           <SectionAbout />
           <SectionChoose />
           <SectionTerms />

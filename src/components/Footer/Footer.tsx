@@ -12,7 +12,7 @@ import { SocialSection } from "./SocialSection";
 import { NavigationListsContainer } from "./NavigationListContainer";
 import { HelpSection } from "./DonationInfo";
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   const breakpoint = useBreakpoint();
 
   const MobileDesktopFooter = () => {
@@ -81,3 +81,5 @@ export const Footer: React.FC = () => {
     </Box>
   );
 };
+
+export default Footer;
