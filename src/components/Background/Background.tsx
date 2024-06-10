@@ -109,7 +109,7 @@ const Background: React.FC = () => {
       position="absolute"
       top={{ base: "50px", md: "-257px", lg: "-44px" }}
       left={{ base: "-112px", md: "-320px", lg: "-342px" }}
-      width={{ base: "611px", md: "1682px", lg: "2143px" }}
+      maxWidth={{ base: "611px", md: "1682px", lg: "2143px" }}
       height={{ base: "5398px", md: "5762px", lg: "6271px" }}
       mx={"auto"}
       zIndex={-1}
