@@ -4,7 +4,7 @@ import logoMob from "../assets/logo/logo-mobile.svg";
 
 export const LogoTabletDesk: React.FC<{ style?: object }> = ({ style }) => {
   return (
-    <Link href="/" mr="auto" {...style}>
+    <Link href="#header" mr="auto" {...style}>
       <Image
         src={logoTabletDesk}
         alt="Зоюраження логотипу"
@@ -17,7 +17,7 @@ export const LogoTabletDesk: React.FC<{ style?: object }> = ({ style }) => {
 
 export const LogoMob: React.FC<{ style?: object }> = ({ style }) => {
   return (
-    <Link href="/" mr="auto" {...style}>
+    <Link href="#header" mr="auto" {...style}>
       <Image
         src={logoMob}
         alt="Зоюраження логотипу"

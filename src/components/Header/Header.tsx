@@ -1,4 +1,4 @@
-import { Box, Button, Container, useDisclosure } from "@chakra-ui/react";
+import { Button, Container, useDisclosure } from "@chakra-ui/react";
 import { useRef } from "react";
 
 import { LogoMob, LogoTabletDesk } from "../Logo";
@@ -47,21 +47,21 @@ const Header: React.FC = () => {
     );
 
   return (
-    <Box as="header">
-      <Container
-        display="flex"
-        alignItems="center"
-        gap={[2, 2, 6]}
-        h={["100px", "124px"]}
-      >
-        {getLogo()}
-        {getNavList()}
-        {getSelectLanguage()}
-        {getHelpButton()}
-        {getBurgerButton()}
-        <MobMenu isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
-      </Container>
-    </Box>
+    <Container
+      as="header"
+      id="header"
+      display="flex"
+      alignItems="center"
+      gap={[2, 2, 6]}
+      h={["100px", "124px"]}
+    >
+      {getLogo()}
+      {getNavList()}
+      {getSelectLanguage()}
+      {getHelpButton()}
+      {getBurgerButton()}
+      <MobMenu isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
+    </Container>
   );
 };
 
