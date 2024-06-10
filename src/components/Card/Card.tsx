@@ -1,8 +1,5 @@
-import { Flex } from "@chakra-ui/react";
-
+import { Flex, Image, useBreakpointValue } from "@chakra-ui/react";
 import { Animal } from "../../types";
-import { CardImage } from "./CardImage";
-import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { CardInfo } from "./CardInfo";
 import { CardButton } from "./CardButton";
 
@@ -11,10 +8,12 @@ interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({ item }) => {
-  const breakpoint = useBreakpoint();
-
   const { imgLg, imgMob, name, age, description } = item;
-  const getImageSrc = breakpoint === "laptop" ? imgLg : imgMob;
+  const getImageSrc = useBreakpointValue({
+    base: imgMob,
+    md: imgLg,
+    lg: imgLg,
+  });
 
   // форматування відображення віку
   const formatAge = () => {
@@ -31,8 +30,12 @@ export const Card: React.FC<CardProps> = ({ item }) => {
 
   return (
     <>
-      <CardImage imgSrc={getImageSrc} altText={`Зображення ${description}`} />
-
+      <Image
+        src={getImageSrc}
+        alt={description}
+        h={{ base: "260px", lg: "350px" }}
+        w={{ lg: "370px" }}
+      />
       <Flex py="14px" justifyContent="space-between" alignItems="center">
         <CardInfo name={name} ageText={formatAge()} />
 

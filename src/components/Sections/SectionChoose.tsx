@@ -26,7 +26,8 @@ const SectionChoose = () => {
         {visibleAnimals.map(animal => (
           <ListItem
             key={animal.id}
-            w={{ base: "200px", sm: "223px", lg: "370px" }}
+            w={{ base: "200px", sm: "223px", md: "223px", lg: "370px" }}
+            h={{ base: "200px", sm: "223px", md: "384px", lg: "470px" }}
           >
             <Card item={animal} />
           </ListItem>
