@@ -35,6 +35,7 @@ export const Card: React.FC<CardProps> = ({ item }) => {
         alt={description}
         h={{ base: "260px", lg: "350px" }}
         w={{ lg: "370px" }}
+        borderTopRightRadius={"80px"}
       />
       <Flex py="14px" justifyContent="space-between" alignItems="center">
         <CardInfo name={name} ageText={formatAge()} />
