@@ -5,8 +5,8 @@ export const CardButton = () => {
   return (
     <Box
       as="button"
-      w={{ base: "44px", md: "66px" }}
-      h={{ base: "44px", md: "66px" }}
+      w={{ base: "44px", lg: "66px" }}
+      h={{ base: "44px", lg: "66px" }}
       borderRadius="50%"
       boxShadow="1px 2px 5px 0 #a4c2ff"
       display="flex"
@@ -15,7 +15,7 @@ export const CardButton = () => {
       color={"custom.blue"}
       _hover={{ color: "custom.red" }}
     >
-      <ArrowIcon boxSize={{ base: "16px", md: "26px" }} />
+      <ArrowIcon boxSize={{ base: "16px", lg: "26px" }} />
     </Box>
   );
 };
