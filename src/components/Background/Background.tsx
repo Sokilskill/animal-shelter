@@ -1,58 +1,3 @@
-// import React from "react";
-// import { Box, useBreakpointValue } from "@chakra-ui/react";
-
-// const redColor = "rgba(239, 57, 89, 0.4)";
-// const blueColor = "rgba(74, 134, 255, 0.4)";
-
-// const Background: React.FC = () => {
-//   const desktopSpots = [
-//     { color: blueColor, top: "-44px", right: "1282px" },
-//     { color: blueColor, top: "448px", right: "220px" },
-//     { color: blueColor, top: "2256px", left: "1301px" },
-//     { color: blueColor, down: "1078px", left: "974px" },
-
-//     { color: redColor, top: "674px", left: "1163px" },
-//     { color: redColor, top: "1553px", left: "-197px" },
-//     { color: redColor, top: "2985px", left: "-197px" },
-//   ];
-
-//   const mobileSpots = [
-//     { color: redColor, top: "-100px", right: "650px" },
-//     { color: redColor, top: "150px", right: "109px" },
-//     { color: blueColor, top: "350px", left: "584px" },
-//   ];
-
-//   const spots = useBreakpointValue({ base: mobileSpots, md: desktopSpots });
-
-//   return (
-//     <Box
-//       position="absolute"
-//       top={0}
-//       left={0}
-//       width="100%"
-//       height="100%"
-//       zIndex={-1}
-//     >
-//       {spots?.map((spot, index) => (
-//         <Box
-//           key={index}
-//           position="absolute"
-//           top={spot.top}
-//           left={spot.left}
-//           right={spot.right}
-//           width={{ base: "200px", md: "500px" }}
-//           height={{ base: "200px", md: "500px" }}
-//           borderRadius="50%"
-//           filter={{ base: "blur(100px)", md: "blur(200px)" }}
-//           backgroundColor={spot.color}
-//         />
-//       ))}
-//     </Box>
-//   );
-// };
-
-// export default Background;
-
 import React from "react";
 import { Box, useBreakpointValue } from "@chakra-ui/react";
 
@@ -109,9 +54,8 @@ const Background: React.FC = () => {
       position="absolute"
       top={{ base: "50px", md: "-257px", lg: "-44px" }}
       left={{ base: "-112px", md: "-320px", lg: "-342px" }}
-      maxWidth={{ base: "611px", md: "1682px", lg: "2143px" }}
+      w={{ base: "611px", md: "1682px", lg: "2143px" }}
       height={{ base: "5398px", md: "5762px", lg: "6271px" }}
-      mx={"auto"}
       zIndex={-1}
     >
       {spots?.map((spot, index) => (

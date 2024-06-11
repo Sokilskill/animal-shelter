@@ -14,10 +14,11 @@ const App: React.FC = () => {
         element={
           <Suspense fallback={<SuspenseLoader />}>
             <Box
-              maxW={{ base: "375px", md: "1024px", lg: "1440px" }}
+              w={{ base: "375px", md: "1024px", lg: "1440px" }}
               position="relative"
               minHeight="100vh"
               mx="auto"
+              overflow={"hidden"}
             >
               <Background />
 
