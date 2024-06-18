@@ -37,7 +37,7 @@
 1. Клонування репозиторію:
 
    ```bash
-   git clone https://github.com/yourusername/animal-shelter.git
+   git clone https://github.com/Sokilskill/animal-shelter.git
    ```
 
 2. Перейти до директорії проекту:
