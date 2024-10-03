@@ -13,16 +13,17 @@ const App: React.FC = () => {
         path="/"
         element={
           <Suspense fallback={<SuspenseLoader />}>
-            <Box
-              w={{ base: "375px", md: "1024px", lg: "1440px" }}
-              position="relative"
-              minHeight="100vh"
-              mx="auto"
-              overflow={"hidden"}
-            >
-              <Background />
+            <Box overflow-x={"hidden"}>
+              <Box
+                w={{ base: "375px", md: "1024px", lg: "1440px" }}
+                position="relative"
+                minHeight="100vh"
+                mx="auto"
+              >
+                <Background />
 
-              <LandingPage />
+                <LandingPage />
+              </Box>
             </Box>
           </Suspense>
         }
