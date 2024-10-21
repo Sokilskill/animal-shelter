@@ -1,10 +1,25 @@
-import { Select, SelectProps } from "@chakra-ui/react";
+import React from "react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
-export const SelectLanguage: React.FC<SelectProps> = (props) => {
+export const SelectLanguage: React.FC = () => {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <Select fontSize="20px" border="none" w="max-content" {...props}>
-      <option value="ua">UA</option>
-      <option value="en">EN</option>
-    </Select>
+    <Menu>
+      <MenuButton
+        _focusVisible={{ boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.6);" }}
+      >
+        {i18n.language === "uk" ? "🇺🇦" : "🇬🇧"}
+      </MenuButton>
+      <MenuList>
+        <MenuItem onClick={() => changeLanguage("en")}>🇬🇧 English</MenuItem>
+        <MenuItem onClick={() => changeLanguage("uk")}>🇺🇦 Українська</MenuItem>
+      </MenuList>
+    </Menu>
   );
 };

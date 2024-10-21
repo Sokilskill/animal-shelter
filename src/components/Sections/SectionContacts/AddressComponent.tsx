@@ -1,6 +1,9 @@
 import { Box, Link, List, ListItem, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 export const AddressComponent = () => {
+  const { t } = useTranslation();
+
   const contactListItemStyle = {
     display: "flex",
     gap: { base: "15px", md: "20px" },
@@ -22,7 +25,7 @@ export const AddressComponent = () => {
             variant="contactText"
             fontSize={{ sm: "20px", md: "24px", lg: "30px" }}
           >
-            Адреса
+            {t("address.address")}
           </Text>
 
           <Link
@@ -30,12 +33,12 @@ export const AddressComponent = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            cмт. Жук м. Івано-Франківська область
+            {t("address.address_value")}
           </Link>
         </ListItem>
 
         <ListItem {...contactListItemStyle}>
-          <Text variant="contactText">Телефон</Text>
+          <Text variant="contactText">{t("address.phone")}</Text>
           <List>
             <ListItem>
               <Link href="tel:+380991234567">+38 (099) 123 45 67</Link>
@@ -47,7 +50,7 @@ export const AddressComponent = () => {
         </ListItem>
 
         <ListItem {...contactListItemStyle}>
-          <Text variant="contactText">Електронна адреса</Text>
+          <Text variant="contactText">{t("address.email")}</Text>
           <Link href="mailto:hatyna@gmail.com">hatyna@gmail.com</Link>
         </ListItem>
       </List>

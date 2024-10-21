@@ -1,0 +1,14 @@
+{
+  "address": {
+    "title": "Our Contacts",
+    "have_a_question": "You have a question?",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "address_value": "cmt. Zhuk, Ivano-Frankivsk region",
+    "contact_text": {
+      "mobile": "Contact us:",
+      "desktop": "Contact us directly:"
+    }
+  }
+}

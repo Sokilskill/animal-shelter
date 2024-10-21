@@ -1,12 +1,13 @@
 import { Box, Button, Heading, List, ListItem, Text } from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/react";
-
+import { useTranslation } from "react-i18next"; // Додаємо i18n
 import listOfAnimals from "../../data/animals.json";
 import { Slider } from "../Slider/SliderAnimal";
 import { Card } from "../Card/Card";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 const SectionChoose = () => {
+  const { t } = useTranslation(); // Ініціалізуємо функцію перекладу
   const breakpoint = useBreakpoint();
 
   // визначення кількості відображених карток залежно від розміру екрану
@@ -54,7 +55,7 @@ const SectionChoose = () => {
         mb={6}
         w={{ base: "350px", md: "unset" }}
       >
-        Вибери собі вірного друга
+        {t("section_choose.heading")}{" "}
       </Heading>
 
       <Text
@@ -62,7 +63,7 @@ const SectionChoose = () => {
         fontWeight={{ base: 400, lg: 700 }}
         textAlign={"center"}
       >
-        Не купуй – прихисти, адже справжня дружба не продається!
+        {t("section_choose.description")}{" "}
       </Text>
 
       {breakpoint === "mobile" ? (
@@ -79,7 +80,7 @@ const SectionChoose = () => {
       )}
 
       <Button type="button" mx={"auto"} variant="secondary">
-        Показати більше
+        {t("section_choose.show_more")}{" "}
       </Button>
     </Box>
   );

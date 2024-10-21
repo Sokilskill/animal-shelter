@@ -1,6 +1,6 @@
 export interface Animal {
   id: string;
-  name: string;
+  translationKey: string;
   age: {
     year: string;
     month: string;

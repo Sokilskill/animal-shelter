@@ -1,0 +1,36 @@
+{
+  "animals": {
+    "0": {
+      "name": "Druzhok",
+      "description": "Labrador dog"
+    },
+    "1": {
+      "name": "Bim",
+      "description": "Dog"
+    },
+    "2": {
+      "name": "Silver",
+      "description": "Cat"
+    },
+    "3": {
+      "name": "Bilka",
+      "description": "Ginger cat"
+    },
+    "4": {
+      "name": "Lucky",
+      "description": "Dog"
+    },
+    "5": {
+      "name": "Jack",
+      "description": "Dog"
+    },
+    "6": {
+      "name": "Busya",
+      "description": "Dog"
+    },
+    "7  ": {
+      "name": "Zhuryk",
+      "description": "Dog"
+    }
+  }
+}

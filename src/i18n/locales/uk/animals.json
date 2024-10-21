@@ -1,0 +1,36 @@
+{
+  "animals": [
+    {
+      "name": "Дружок",
+      "description": "Собака породи лабрадор"
+    },
+    {
+      "name": "Бім",
+      "description": "Собака"
+    },
+    {
+      "name": "Сільвер",
+      "description": "Кіт"
+    },
+    {
+      "name": "Білка",
+      "description": "Руда кішка"
+    },
+    {
+      "name": "Лаккі",
+      "description": "Пес"
+    },
+    {
+      "name": "Джек",
+      "description": "Пес"
+    },
+    {
+      "name": "Буся",
+      "description": "Пес"
+    },
+    {
+      "name": "Журик",
+      "description": "Пес"
+    }
+  ]
+}

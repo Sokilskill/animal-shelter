@@ -13,6 +13,7 @@ import { mobileNavigationList } from "../../data/navList";
 import { CloseBtnIcon } from "../../assets/icons/burgerBtn";
 import { SelectLanguage } from "../SelectLanguage/SelectLanguage";
 import { LogoMob, LogoTabletDesk } from "../Logo";
+import { useTranslation } from "react-i18next";
 
 interface MobMenuProps {
   btnRef: React.RefObject<HTMLButtonElement>;
@@ -25,6 +26,8 @@ export const MobMenu: React.FC<MobMenuProps> = ({
   isOpen,
   onClose,
 }) => {
+  const { t } = useTranslation();
+
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
@@ -50,7 +53,7 @@ export const MobMenu: React.FC<MobMenuProps> = ({
               </Box>
 
               <Button as="a" href="#help" variant="help" onClick={onClose}>
-                Допомогти
+                {t("header.help")}
               </Button>
               <Button onClick={onClose} bgColor="transparent">
                 <CloseBtnIcon />
@@ -70,8 +73,8 @@ export const MobMenu: React.FC<MobMenuProps> = ({
               aria-label={"navigation"}
               style={{ alignItems: "center", gap: "30px" }}
             />
-            <Box>
-              <SelectLanguage fontSize="16px" mt="30px" />
+            <Box fontSize="16px" mt="30px">
+              <SelectLanguage />
             </Box>
           </DrawerBody>
         </DrawerContent>

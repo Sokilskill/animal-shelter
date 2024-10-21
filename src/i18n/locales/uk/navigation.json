@@ -1,0 +1,27 @@
+{
+  "goodness": {
+    "friends": "Вірні друзі",
+    "choose_friend": "Обрати друга",
+    "lucky": "Щасливчики",
+    "be_volunteer": "Стати волонтером"
+  },
+  "about": {
+    "about_us": "Про нас",
+    "terms": "Наші умови",
+    "team": "Наша команда",
+    "history": "Історія створення"
+  },
+  "contact": {
+    "location": "Локація",
+    "contacts": "Контакти",
+    "info": "Інформація"
+  },
+  "navigation": {
+    "home": "Домашня",
+    "about_us": "Про нас",
+    "friends": "Вірні друзі",
+    "terms": "Наші умови",
+    "location": "Локація",
+    "contacts": "Контакти"
+  }
+}

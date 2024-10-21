@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useTranslation } from "react-i18next";
 
 import catImg from "../../assets/terms/cat-mob.png";
 import bigDogImg from "../../assets/terms/big-dog-mob.png";
@@ -19,29 +20,27 @@ import littleDogImgDes from "../../assets/terms/little-dog-des.png";
 
 const animalsList = [
   {
-    title: "Лише власник",
-    description: "Собаку чи кота віддаємо лише в руки майбутньому власнику",
     images: {
       mob: littleDogImg,
-      md: "",
       lg: littleDogImgDes,
     },
   },
   {
-    title: "Тварина для сім'ї",
-    description:
-      "Тваринки не для утримання на ланцюгу, охорони підприєства чи самовигулу",
-    images: { mob: catImg, md: "", lg: catImgDes },
+    images: {
+      mob: catImg,
+      lg: catImgDes,
+    },
   },
   {
-    title: "Відповідальність",
-    description:
-      "Не забирайте тварину з притулку, якщо не готові про неї піклуватись",
-    images: { mob: bigDogImg, md: "", lg: bigDogImgDes },
+    images: {
+      mob: bigDogImg,
+      lg: bigDogImgDes,
+    },
   },
 ];
 
 const SectionTerms = () => {
+  const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
   return (
@@ -52,7 +51,7 @@ const SectionTerms = () => {
     >
       <Container>
         <Heading variant="sectionHeading" mb={{ base: 3, md: 16 }}>
-          Наші умови
+          {t("terms.heading")} {/* Переклад заголовку */}
         </Heading>
 
         <List
@@ -61,7 +60,7 @@ const SectionTerms = () => {
           gap={{ base: 6, md: 2 }}
           justifyContent={{ md: "space-between" }}
         >
-          {animalsList.map((animal, index) => (
+          {animalsList.map((animal: any, index: number) => (
             <ListItem
               key={index}
               display="flex"
@@ -77,13 +76,13 @@ const SectionTerms = () => {
             >
               <Box>
                 <Heading as="h3" variant="subTitle" mb={{ base: 3, md: 4 }}>
-                  {animal.title}
+                  {t(`terms.items.${index}.title`)}
                 </Heading>
                 <Text
                   fontSize={{ md: "20px", lg: "24px" }}
                   fontWeight={{ md: 400, lg: 700 }}
                 >
-                  {animal.description}
+                  {t(`terms.items.${index}.description`)}
                 </Text>
               </Box>
 
@@ -93,7 +92,7 @@ const SectionTerms = () => {
                     ? animal.images.lg
                     : animal.images.mob
                 }
-                alt="зображення тваринки"
+                alt={t(`terms.items.${index}.title`)}
               />
             </ListItem>
           ))}

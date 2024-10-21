@@ -12,8 +12,10 @@ import heroImgLaptop from "../../assets/hero/hero-image1-laptop.png";
 import heroImgDesktop from "../../assets/hero/hero-image1-desktop.png";
 import decor from "../../assets/hero/decor-mob.png";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useTranslation } from "react-i18next";
 
 const SectionHero: React.FC = () => {
+  const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
   let heroImg = heroImgMob;
@@ -33,8 +35,7 @@ const SectionHero: React.FC = () => {
         fontWeight={{ base: "medium", lg: "bold" }}
         color="custom.blackTypography"
       >
-        Вірний друг радітиме тобі завжди. Йому потрібно дуже мало - теплий дім
-        та дбайливий господар
+        {t("hero.description")}
       </Text>
     );
   };
@@ -52,7 +53,7 @@ const SectionHero: React.FC = () => {
         borderWidth={["4px", "4px", "5px", "5px"]}
         variant={"primary"}
       >
-        Обрати
+        {t("hero.choose_button")}
       </Button>
     );
   };
@@ -106,7 +107,7 @@ const SectionHero: React.FC = () => {
           lineHeight={{ md: 1.3 }}
           mb={[4, 6, 10]}
         >
-          Цим оченятам дуже потрібні любов і турбота
+          {t("hero.heading")}
         </Heading>
 
         <HeroDescription />

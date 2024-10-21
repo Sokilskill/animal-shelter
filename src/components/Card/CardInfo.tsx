@@ -1,10 +1,13 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 interface CardInfo {
   name: string;
   ageText: string;
 }
 export const CardInfo: React.FC<CardInfo> = ({ name, ageText }) => {
+  const { t } = useTranslation();
+
   return (
     <Box>
       <Heading
@@ -18,7 +21,7 @@ export const CardInfo: React.FC<CardInfo> = ({ name, ageText }) => {
       </Heading>
 
       <Text fontSize={{ lg: "24px" }} fontWeight={{ lg: 700 }}>
-        Вік {ageText}
+        {t("card.age")} {ageText}
       </Text>
     </Box>
   );

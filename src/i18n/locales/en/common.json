@@ -1,0 +1,13 @@
+{
+  "logo": {
+    "name": "KHATYNA",
+    "description": "animal shelter"
+  },
+  "social": { "joinUs": "Join for us" },
+  "header": {
+    "help": "Help us"
+  },
+  "location": {
+    "heading": "Location"
+  }
+}

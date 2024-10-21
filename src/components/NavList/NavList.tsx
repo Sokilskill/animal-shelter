@@ -1,16 +1,25 @@
 import { Link, List, ListItem, ListProps } from "@chakra-ui/react";
 import { ListNav } from "../../types";
-// =========  список для навігації по сайту ============
+import { useTranslation } from "react-i18next";
 
-export const NavList: React.FC<{
+interface NavListProps {
   listItem: ListNav[];
   onClick?: () => void;
   "aria-label": string;
   style?: ListProps;
-}> = ({ listItem, "aria-label": ariaLabel, style, onClick }) => {
+}
+
+export const NavList: React.FC<NavListProps> = ({
+  listItem,
+  "aria-label": ariaLabel,
+  style,
+  onClick,
+}) => {
+  const { t } = useTranslation();
+
   return (
     <List
-      display={"flex"}
+      display="flex"
       flexDirection="column"
       rowGap={2}
       w={{ base: "164px", md: "230px", lg: "213px" }}
@@ -18,12 +27,8 @@ export const NavList: React.FC<{
       {...style}
     >
       {listItem.map((item, index) => (
-        <ListItem
-          key={index}
-          // fontSize={{ base: "16px", lg: "20px" }}
-          onClick={onClick}
-        >
-          <Link href={item.to}>{item.name}</Link>
+        <ListItem key={item.to + index} onClick={onClick}>
+          <Link href={item.to}>{t(item.name)}</Link>
         </ListItem>
       ))}
     </List>
