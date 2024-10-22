@@ -31,12 +31,6 @@ const Header: React.FC = () => {
       />
     );
 
-  const getHelpButton = () => (
-    <Button as="a" href="#help" variant="help">
-      {t("header.help")}
-    </Button>
-  );
-
   const getBurgerButton = () =>
     breakpoint !== "desktop" && (
       <Button onClick={onOpen} bgColor="transparent">
@@ -53,10 +47,12 @@ const Header: React.FC = () => {
       gap={[2, 2, 6]}
       h={["100px", "124px"]}
     >
-      <Logo isDesktop={breakpoint === "desktop"} />
+      <Logo viewText={breakpoint !== "mobile"} />
       {getNavList()}
       {breakpoint !== "mobile" && <SelectLanguage />}
-      {getHelpButton()}
+      <Button as="a" href="#help" variant="help">
+        {t("header.help")}
+      </Button>
       {getBurgerButton()}
       <MobMenu isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
     </Container>
