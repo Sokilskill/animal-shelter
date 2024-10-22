@@ -1,16 +1,15 @@
 import { Box, Button, Heading, List, ListItem, Text } from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next"; // Додаємо i18n
+import { useTranslation } from "react-i18next";
 import listOfAnimals from "../../data/animals.json";
 import { Slider } from "../Slider/SliderAnimal";
 import { Card } from "../Card/Card";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 const SectionChoose = () => {
-  const { t } = useTranslation(); // Ініціалізуємо функцію перекладу
+  const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
-  // визначення кількості відображених карток залежно від розміру екрану
   const numberOfCards = useBreakpointValue({ md: 8, lg: 6 });
   const visibleAnimals = listOfAnimals.slice(0, numberOfCards);
 
