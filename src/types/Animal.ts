@@ -7,5 +7,4 @@ export interface Animal {
   };
   imgLg: string;
   imgMob: string;
-  description: string;
 }

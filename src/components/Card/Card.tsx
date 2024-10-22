@@ -11,7 +11,7 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ item }) => {
   const { t } = useTranslation();
 
-  const { imgLg, imgMob, translationKey, age, description } = item;
+  const { imgLg, imgMob, translationKey, age } = item;
   const getImageSrc = useBreakpointValue({
     base: imgMob,
     md: imgLg,
@@ -36,7 +36,7 @@ export const Card: React.FC<CardProps> = ({ item }) => {
     <>
       <Image
         src={getImageSrc}
-        alt={description}
+        alt={t(`animals.${translationKey}.description`)}
         h={{ base: "260px", lg: "350px" }}
         w={{ lg: "370px" }}
         borderTopRightRadius={"80px"}
