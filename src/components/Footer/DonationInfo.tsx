@@ -1,19 +1,22 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 const DonationInfo: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Text>Допомогти матеріально:</Text>
-      <Text>ГО “ХАТИНА”</Text>
+      <Text>{t("donation.donate_financially")}:</Text>
+      <Text>{t("donation.ngo_name")}</Text>
       <Text text-wrap="nowrap">
-        ЄДРПОУ:
+        {t("donation.edrpou")}:
         <Box as="strong" fontWeight={{ sm: 500, md: 600 }}>
           123456789
         </Box>
       </Text>
-      <Text text-wrap="nowrap">Карта Приватбанку</Text>
+      <Text text-wrap="nowrap">{t("donation.privatbank_card")}</Text>
       <Text fontWeight={{ sm: 600 }}>4141 2929 4646 1111</Text>
-      <Text>Прокопів Петро Павлович</Text>
+      <Text>{t("donation.account_holder_name")}</Text>
     </>
   );
 };

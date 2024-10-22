@@ -1,0 +1,27 @@
+{
+  "goodness": {
+    "friends": "Loyal Friends",
+    "choose_friend": "Choose a Friend",
+    "lucky": "Lucky Ones",
+    "be_volunteer": "Become a Volunteer"
+  },
+  "about": {
+    "about_us": "About Us",
+    "terms": "Our Terms",
+    "team": "Our Team",
+    "history": "Creation Story"
+  },
+  "contact": {
+    "location": "Location",
+    "contacts": "Contacts",
+    "info": "Information"
+  },
+  "navigation": {
+    "home": "Home",
+    "about_us": "About Us",
+    "friends": "Loyal Friends",
+    "terms": "Our Terms",
+    "location": "Location",
+    "contacts": "Contacts"
+  }
+}

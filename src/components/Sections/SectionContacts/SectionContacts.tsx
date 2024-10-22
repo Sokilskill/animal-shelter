@@ -3,8 +3,10 @@ import imgMob from "../../../assets/contact/Image3.png";
 import imgDes from "../../../assets/contact/image-des.png";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { AddressComponent } from "./AddressComponent";
+import { useTranslation } from "react-i18next";
 
 const SectionContacts = () => {
+  const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
   return (
@@ -14,7 +16,7 @@ const SectionContacts = () => {
       pb={{ base: "40px", sm: "60px", md: "100px", lg: "124px" }}
     >
       <Heading as="h2" variant="sectionHeading" mb={{ base: 6, md: "64px" }}>
-        Наші контакти
+        {t("address.title")}
       </Heading>
 
       <Box
@@ -30,11 +32,11 @@ const SectionContacts = () => {
             fontWeight={{ md: 500, lg: 700 }}
             mb="20px"
           >
-            <Text>У вас є питання?</Text>
+            <Text>{t("address.have_a_question")}</Text>
             <Text>
               {breakpoint === "mobile"
-                ? "Зв'яжіться з нами:"
-                : "Зв'яжіться з нами безпосередньо:"}
+                ? t("address.contact_text.mobile")
+                : t("address.contact_text.desktop")}
             </Text>
           </Box>
 

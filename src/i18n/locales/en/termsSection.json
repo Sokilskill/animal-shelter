@@ -1,0 +1,19 @@
+{
+  "terms": {
+    "heading": "Our Terms",
+    "items": [
+      {
+        "title": "Only the owner",
+        "description": "We give the dog or cat only directly to the future owner"
+      },
+      {
+        "title": "Animal for the family",
+        "description": "Animals are not for keeping on a chain, guarding an enterprise, or free-range walking"
+      },
+      {
+        "title": "Responsibility",
+        "description": "Do not take an animal from the shelter if you are not ready to take care of it"
+      }
+    ]
+  }
+}

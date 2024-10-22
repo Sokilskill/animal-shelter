@@ -1,90 +1,58 @@
 [
   {
     "id": "1",
-    "name": "Дружок",
-    "age": {
-      "year": "1",
-      "month": "3"
-    },
+    "age": { "year": "1", "month": "3" },
     "imgLg": "./animals/drywok.jpg",
     "imgMob": "./animals/mob/drywok.jpg",
-    "description": "Собака породи лабрадор"
+    "translationKey": "0"
   },
   {
     "id": "2",
-    "name": "Бім",
-    "age": {
-      "year": "",
-      "month": "8"
-    },
+    "age": { "year": "", "month": "8" },
     "imgLg": "./animals/bim.jpg",
     "imgMob": "./animals/mob/bim.jpg",
-    "description": "Собака"
+    "translationKey": "1"
   },
   {
     "id": "3",
-    "name": "Сільвер",
-    "age": {
-      "year": "1",
-      "month": "9"
-    },
+    "age": { "year": "1", "month": "9" },
     "imgLg": "./animals/silver.jpg",
     "imgMob": "./animals/mob/silver.jpg",
-    "description": "Кіт"
+    "translationKey": "2"
   },
   {
     "id": "4",
-    "name": "Білка",
-    "age": {
-      "year": "2",
-      "month": ""
-    },
+    "age": { "year": "2", "month": "" },
     "imgLg": "./animals/bilka.jpg",
     "imgMob": "./animals/mob/bilka.jpg",
-    "description": "Руда кішка"
+    "translationKey": "3"
   },
   {
     "id": "5",
-    "name": "Лаккі",
-    "age": {
-      "year": "2",
-      "month": "1"
-    },
+    "age": { "year": "2", "month": "1" },
     "imgLg": "animals/lucky.jpg",
     "imgMob": "animals/mob/lucky.jpg",
-    "description": "Пес"
+    "translationKey": "4"
   },
   {
     "id": "6",
-    "name": "Джек",
-    "age": {
-      "year": "2",
-      "month": "1"
-    },
+    "age": { "year": "2", "month": "1" },
     "imgLg": "animals/mob/jack.jpg",
     "imgMob": "animals/mob/jack.jpg",
-    "description": "Пес"
+    "translationKey": "5"
   },
   {
     "id": "7",
-    "name": "Буся",
-    "age": {
-      "year": "2",
-      "month": "1"
-    },
+    "age": { "year": "2", "month": "1" },
     "imgLg": "animals/mob/bysya.jpg",
     "imgMob": "animals/mob/bysya.jpg",
-    "description": "Пес"
+    "translationKey": "6"
   },
   {
     "id": "8",
-    "name": "Журик",
-    "age": {
-      "year": "1",
-      "month": ""
-    },
+    "age": { "year": "1", "month": "" },
     "imgLg": "animals/wyruk.jpg",
     "imgMob": "animals/wyruk.jpg",
-    "description": "Пес"
+    "translationKey": "7"
   }
 ]

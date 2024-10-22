@@ -6,13 +6,14 @@ import {
   Button,
   Box,
   Container,
-  useBreakpointValue,
 } from "@chakra-ui/react";
+import { Logo } from "../Logo";
 import { NavList } from "../NavList/NavList";
 import { mobileNavigationList } from "../../data/navList";
 import { CloseBtnIcon } from "../../assets/icons/burgerBtn";
 import { SelectLanguage } from "../SelectLanguage/SelectLanguage";
-import { LogoMob, LogoTabletDesk } from "../Logo";
+import { useTranslation } from "react-i18next";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 interface MobMenuProps {
   btnRef: React.RefObject<HTMLButtonElement>;
@@ -25,7 +26,9 @@ export const MobMenu: React.FC<MobMenuProps> = ({
   isOpen,
   onClose,
 }) => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const { t } = useTranslation();
+
+  const breakpoint = useBreakpoint();
 
   return (
     <>
@@ -44,13 +47,13 @@ export const MobMenu: React.FC<MobMenuProps> = ({
               gap={[2, 2, 0]}
               h={["100px ", "124px"]}
             >
-              {isMobile ? <LogoMob /> : <LogoTabletDesk />}
-              <Box display={{ base: "none", md: "block" }}>
+              <Logo viewText={breakpoint !== "mobile"} />
+              <Box display={{ base: "none", md: "block" }} mr={"20px"}>
                 <SelectLanguage />
               </Box>
 
               <Button as="a" href="#help" variant="help" onClick={onClose}>
-                Допомогти
+                {t("header.help")}
               </Button>
               <Button onClick={onClose} bgColor="transparent">
                 <CloseBtnIcon />
@@ -70,8 +73,8 @@ export const MobMenu: React.FC<MobMenuProps> = ({
               aria-label={"navigation"}
               style={{ alignItems: "center", gap: "30px" }}
             />
-            <Box>
-              <SelectLanguage fontSize="16px" mt="30px" />
+            <Box fontSize="16px" mt="30px">
+              <SelectLanguage />
             </Box>
           </DrawerBody>
         </DrawerContent>

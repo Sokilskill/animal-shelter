@@ -3,32 +3,30 @@ import bgImgMobile from "../../assets/help/Rectangle.png";
 import bgImgLaptop from "../../assets/help/rectangle-laptop.png";
 import bgImgDesk from "../../assets/help/rectangle-desk.png";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { useTranslation } from "react-i18next";
 
-const HelpText: React.FC<{ isMobile: boolean }> = ({ isMobile }) => (
-  <Text
-    textAlign="center"
-    fontSize={{ md: "24px" }}
-    fontWeight={{ md: 500, lg: 700 }}
-  >
-    {isMobile ? (
-      <>
-        Перейдіть за посиланням
-        <br />
-        та заповніть форму
-        <br />
-        Ми з вами обов’язково звяжемось
-      </>
-    ) : (
-      <>
-        Перейдіть за посиланням та заповніть форму
-        <br />
-        Ми з вами обов’язково звяжемось
-      </>
-    )}
-  </Text>
-);
+const HelpText: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Text
+      textAlign="center"
+      fontSize={{ md: "24px" }}
+      fontWeight={{ md: 500, lg: 700 }}
+      whiteSpace="pre-line"
+    >
+      {isMobile ? (
+        <>{t("help.instruction_mobile")}</>
+      ) : (
+        <>{t("help.instruction_desktop")}</>
+      )}
+    </Text>
+  );
+};
 
 const SectionHelp = () => {
+  const { t } = useTranslation();
+
   const breakpoint = useBreakpoint();
   const isMobile = breakpoint === "mobile";
 
@@ -49,7 +47,7 @@ const SectionHelp = () => {
       pb={{ base: "30px", sm: "44px", md: "120", lg: "56px" }}
     >
       <Heading variant="sectionHeading" mb={{ base: "24px", md: "64px" }}>
-        Як допомогти
+        {t("help.title")}
       </Heading>
 
       <Box
@@ -73,7 +71,7 @@ const SectionHelp = () => {
             textAlign="center"
             color="custom.darkBlue"
           >
-            Бажаєте допомогти притулку?
+            {t("help.description")}
           </Text>
 
           <HelpText isMobile={isMobile} />
@@ -87,7 +85,7 @@ const SectionHelp = () => {
             h={{ base: "80px", md: "102px" }}
             variant="primary"
           >
-            Зв'яжіться з нами
+            {t("help.contact_us")}
           </Button>
         </Flex>
       </Box>

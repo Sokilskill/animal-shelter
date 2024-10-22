@@ -2,28 +2,32 @@ import { Flex, Image, useBreakpointValue } from "@chakra-ui/react";
 import { Animal } from "../../types";
 import { CardInfo } from "./CardInfo";
 import { CardButton } from "./CardButton";
+import { useTranslation } from "react-i18next";
 
 interface CardProps {
   item: Animal;
 }
 
 export const Card: React.FC<CardProps> = ({ item }) => {
-  const { imgLg, imgMob, name, age, description } = item;
+  const { t } = useTranslation();
+
+  const { imgLg, imgMob, translationKey, age, description } = item;
   const getImageSrc = useBreakpointValue({
     base: imgMob,
     md: imgLg,
     lg: imgLg,
   });
 
-  // форматування відображення віку
   const formatAge = () => {
     let ageText = "";
 
     if (age.year) {
-      ageText = `${age.year} ${Number(age.year) > 1 ? "роки" : "рік"} `;
+      ageText = `${age.year} ${
+        Number(age.year) > 1 ? t("card.years") : t("card.year")
+      } `;
     }
     if (age.month) {
-      ageText += `${age.month} місяців`;
+      ageText += `${age.month} ${t("card.months")}`;
     }
     return ageText;
   };
@@ -38,7 +42,10 @@ export const Card: React.FC<CardProps> = ({ item }) => {
         borderTopRightRadius={"80px"}
       />
       <Flex py="14px" justifyContent="space-between" alignItems="center">
-        <CardInfo name={name} ageText={formatAge()} />
+        <CardInfo
+          name={t(`animals.${translationKey}.name`)}
+          ageText={formatAge()}
+        />
 
         <CardButton />
       </Flex>

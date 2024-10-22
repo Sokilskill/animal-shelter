@@ -1,9 +1,11 @@
 import { VStack, Text } from "@chakra-ui/react";
 import { ListSocialIcons } from "./SocialIcons";
+import { useTranslation } from "react-i18next";
 
 export const SocialSection: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
+  const { t } = useTranslation();
   return (
     <VStack
       gap={{ base: 4, md: 8 }}
@@ -15,7 +17,7 @@ export const SocialSection: React.FC<{ children?: React.ReactNode }> = ({
         fontSize={{ base: "18px" }}
         fontWeight={{ base: 400, md: 500, lg: 400 }}
       >
-        Приєднутесь до нас в соціальних мережах
+        {t("social.joinUs")}
       </Text>
       <ListSocialIcons />
     </VStack>

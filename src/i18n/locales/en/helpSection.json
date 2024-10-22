@@ -1,0 +1,10 @@
+{
+  "help": {
+    "title": "How to help",
+    "description": "Would you like to help the shelter?",
+    "contact_us": "Contact us",
+    "instruction": "Follow the link and fill out the form",
+    "instruction_mobile": "Follow the link\nand fill out the form\nWe will definitely contact you",
+    "instruction_desktop": "Follow the link and fill out the form\nWe will definitely contact you"
+  }
+}

@@ -1,37 +1,37 @@
 import { ListNav } from "../types";
 
 export const listGoodness: ListNav[] = [
-  { name: "Вірні друзі", to: "#catalog" },
-  { name: "Обрати друга", to: "#reviews" },
-  { name: "Щасливчики", to: "#how-to-order" },
-  { name: "Стати волонтером", to: "#contact" },
+  { name: "goodness.friends", to: "#catalog" },
+  { name: "goodness.choose_friend", to: "#reviews" },
+  { name: "goodness.lucky", to: "#how-to-order" },
+  { name: "goodness.be_volunteer", to: "#contact" },
 ];
 
 export const listAbout: ListNav[] = [
-  { name: "Про нас", to: "#about-us" },
-  { name: "Наші умови", to: "#terms" },
-  { name: "Наша команда", to: "#contact" },
-  { name: "Історія створення", to: "#contact" },
+  { name: "about.about_us", to: "#about-us" },
+  { name: "about.terms", to: "#terms" },
+  { name: "about.team", to: "#contact" },
+  { name: "about.history", to: "#contact" },
 ];
 export const listContactDetails: ListNav[] = [
-  { name: "Локація", to: "#location" },
-  { name: "Контакти", to: "#contact" },
-  { name: "Інормація", to: "#info" },
+  { name: "contact.location", to: "#location" },
+  { name: "contact.contacts", to: "#contact" },
+  { name: "contact.info", to: "#info" },
 ];
 
 export const mobileNavigationList: ListNav[] = [
-  { name: "Про нас", to: "#about-us" },
-  { name: "Вірні друзі", to: "#catalog" },
-  { name: "Наші умови", to: "#terms" },
-  { name: "Локація", to: "#location" },
-  { name: "Контакти", to: "#contact" },
+  { name: "navigation.about_us", to: "#about-us" },
+  { name: "navigation.friends", to: "#catalog" },
+  { name: "navigation.terms", to: "#terms" },
+  { name: "navigation.location", to: "#location" },
+  { name: "navigation.contacts", to: "#contact" },
 ];
 
 export const navHeaderDesktop: ListNav[] = [
-  { name: "Домашня", to: "/" },
-  { name: "Про нас", to: "#about-us" },
-  { name: "Вірні друзі", to: "#catalog" },
-  { name: "Наші умови", to: "#terms" },
-  { name: "Локація", to: "#location" },
-  { name: "Контакти", to: "#contact" },
+  { name: "navigation.home", to: "/" },
+  { name: "navigation.about_us", to: "#about-us" },
+  { name: "navigation.friends", to: "#catalog" },
+  { name: "navigation.terms", to: "#terms" },
+  { name: "navigation.location", to: "#location" },
+  { name: "navigation.contacts", to: "#contact" },
 ];
